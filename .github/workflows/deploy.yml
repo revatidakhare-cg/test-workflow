@@ -19,9 +19,11 @@ jobs:
 
       - name: Initialize Terraform
         run: terraform init
+        working-directory: infra
 
       - name: Validate Terraform
         run: terraform validate
+        working-directory: infra
 
   plan:
     runs-on: ubuntu-latest
