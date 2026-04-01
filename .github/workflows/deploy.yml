@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      
+      - name: Clean Terraform Workspace
+        run: rm -rf .terraform .terraform.lock.hcl
+        working-directory: infra
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
@@ -31,6 +35,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
+      - name: Clean Terraform Workspace
+        run: rm -rf .terraform .terraform.lock.hcl
+        working-directory: infra
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
